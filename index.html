@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather widget</title>
 
-	<!-- <link rel="preload" as="font" type="font/woff2" crossorigin href="./fonts/Roboto-Regular.woff2">
-    <link rel="preload" as="font" type="font/woff2" crossorigin href="./fonts/Roboto-Bold.woff2"> -->
+	<link rel="preload" as="font" type="font/woff2" crossorigin href="./fonts/Roboto-Regular.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="./fonts/Roboto-Bold.woff2">
     <link rel="stylesheet" href="./styles/normalize.css"></link>
     <link rel="stylesheet" href="./styles/style.css"></link>
 
@@ -38,7 +38,7 @@
             font-family: "Roboto", "Helvetica Neue", sans-serif;
         }
 
-        /* .preloader {
+        .preloader {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -49,6 +49,7 @@
             position: fixed;
             top: 0;
         }
+        
 
         .preloader #circle {
             animation: loading 2s linear infinite;
@@ -60,12 +61,12 @@
             50% { transform: rotate(180deg);}
             75% { transform: rotate(270deg);}
             100% { transform: rotate(360deg);}
-        } */
+        }
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="content" hidden>
         <div class="table">
             <div class="table_header">
                 <h1 class="title">OpenWeather API</h1>
@@ -75,11 +76,11 @@
             </div>
         </div>
     </div>
-    <!-- <div class="preloader" id="preloader">
+    <div class="preloader" id="preloader">
         <svg id='circle' xmlns="http://www.w3.org/2000/svg" width="64px" height="64px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
             <circle cx="50" cy="50" r="32" stroke-width="8" stroke="#E0E0E0" stroke-dasharray="50.26548245743669 50.26548245743669" fill="none" stroke-linecap="round"></circle>
         </svg>
-    </div> -->
+    </div>
 </body>
 
 </html>

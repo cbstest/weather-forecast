@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.container[hidden] {
+    display: none;
+}
+
 .table {
     width: 450px;
     margin-top: 20px;
