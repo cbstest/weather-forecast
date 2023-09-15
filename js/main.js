@@ -4,20 +4,15 @@ import { dataService } from './dataService.js'
 import { Forecast } from './forecast.js'
 import { ForecastListView } from './forecastListView.js'
 
-window.addEventListener('DOMContentLoaded', async () => {
+window.addEventListener('DOMContentLoaded', () => {
     const forecastListView = new ForecastListView('#tableBody')
     
-    // STATE.citiesList.forEach(async (cityId) => {
-    //     const responseObj = await dataService.getWeatherForecast(cityId)
-    //     const currentForecast = new Forecast(responseObj)
-    //     STATE.currentForecastList.push(currentForecast)
-    // })
-    // [Promise, Promise, Promise]
-    const data = await Promise.all(STATE.citiesList.map(cityId => {
-            return dataService.getWeatherForecast(cityId)
-    }))
+    STATE.citiesList.forEach(async (cityId) => {
+        const responseObj = await dataService.getWeatherForecast(cityId)
+        const currentForecast = new Forecast(responseObj)
+        STATE.currentForecastList.push(currentForecast)
 
-    const forecastList = data.map(item => new Forecast(item))
-    STATE.currentForecastList = [...forecastList]
-    forecastListView.showForecast()
+        forecastListView.showForecast(currentForecast)
+    })
+
 })
